@@ -39,7 +39,7 @@ npm install
 
 ## Datenbank erstellen
 
-Wir wechseln in das Terminal und geben folgendes ein:
+Wir wechseln in das Terminal und geben folgendes ein (für MAMP):
 ```
 /Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot
 ```
