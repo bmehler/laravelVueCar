@@ -17,8 +17,8 @@ cd laravelvuecar
 Das Projekt mit unserem Github Repositiory verbinden:
 ```
 git init
-git config user.name 'bmehler'
-git config user.email 'bernhard.mehler@gmail.com'
+git config user.name 'muster'
+git config user.email 'michael.muster@gmail.com'
 repro pfad hinzufügen
 
 git add .
