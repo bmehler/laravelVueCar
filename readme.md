@@ -30,7 +30,7 @@ git checkout develop
 git push -u origin develop
 ```
 
-# Node Packages installieren
+## Node Packages installieren
 Das Laravel Framework liefert bereits eine package.json mit
 den Vue.js Paketen mit
 ```
