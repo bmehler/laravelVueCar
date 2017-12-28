@@ -14,7 +14,7 @@ class CarController extends Controller
      */
     public function index()
     {
-        $cars = Car:all();
+        $cars = Car::all();
         return response()->json($cars);
     }
 
@@ -37,12 +37,67 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        $cars = new Car([
+        $car = new Car([
             'brand' => $request->get('brand'),
             'model' => $request->get('model'),
             'price' => $request->get('price')
         ]);
-        $cars->save();
+        $car->save();
         return response()->json('Successfully added');
+    }
+
+    /**
+     * Display the specified resource.
+     * 
+     * @param int $id
+     * @return Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     * 
+     * @param int $id
+     * @return Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $car = Car::find($id);
+        return response()->json($car);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     * 
+     * @param Illuminate\Http\Request $request
+     * @param int $id
+     * @return Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $car = Car::find($id);
+        $car->brand = $request->get('brand');
+        $car->model = $request->get('model');
+        $car->price = $request->get('price');
+        $car->save();
+
+        return response()->json('Successfully Updated');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     * 
+     * @param int $id
+     * @return Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $car = Car::find($id);
+        $car->delete();
+
+        return response()->json('Successfully Deleted');
     }
 }

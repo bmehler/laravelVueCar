@@ -8,14 +8,26 @@ import axios from 'axios';
 Vue.use(VueAxios, axios);
 
 import App from './App.vue';
-import Example from './components/Example.vue';
+import CreateCar from './components/CreateCar.vue';
+import DisplayCar from './components/DisplayCar.vue';
+import EditCar from './components/EditCar.vue';
 
 const routes = [
   {
-      name: 'Example',
-      path: '/',
-      component: Example
-  }
+    name: 'CreateCar',
+    path: '/cars/create',
+    component: CreateCar
+  },
+  {
+    name: 'DisplayCar',
+    path: '/',
+    component: DisplayCar
+  },
+  {
+    name: 'EditCar',
+    path: '/edit/:id',
+    component: EditCar
+   }
 ];
 
 const router = new VueRouter({ mode: 'history', routes: routes});
